@@ -10,6 +10,11 @@ export interface ClientOptions extends AxiosRequestConfig {
    * @see https://axios-cache-interceptor.js.org/#/pages/configuration
    */
   cacheOptions?: Partial<CacheOptions>;
+  /**
+   * **Base URL**
+   * Location of the JikanAPI. Leave empty to use the official JikanAPI instance.
+   */
+  baseURL?: string;
 }
 
 /**
