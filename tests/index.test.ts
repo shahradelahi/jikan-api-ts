@@ -12,3 +12,10 @@ it('should', async () => {
   expect(data.data).to.have.property('mal_id', 21);
   expect(data.data).to.have.property('title', 'One Piece');
 });
+
+it('should cache', async () => {
+  const client = await createClient();
+
+  expect(await client.getAnimeById({ id: 21 })).property('cached').be.false;
+  expect(await client.getAnimeById({ id: 21 })).property('cached').be.true;
+});
